@@ -56,6 +56,12 @@ main {
 
 .addform {
   display: flex;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
+  padding: 1rem;
+}
+
+.addform * {
+  padding: 0.5rem;
 }
