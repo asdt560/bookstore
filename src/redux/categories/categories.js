@@ -6,6 +6,7 @@ export default function status(state = initialState, action) {
   switch (action.type) {
     case STATUS_CHECK:
       return [
+        ...state,
         'Under construction',
       ];
     default:

@@ -4,7 +4,6 @@ import Book from './Book';
 
 export default function Booklist() {
   const object = store.getState();
-  console.log(object.bookList);
   return (
     <ul>
       {object.bookList.map((book) => (

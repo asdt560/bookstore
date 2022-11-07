@@ -11,9 +11,7 @@ export default function categories() {
       </div>
       <button
         type="button"
-        onClick={
-          store.dispatch(checkState())
-        }
+        onClick={() => store.dispatch(checkState())}
       >
         Check status
       </button>
