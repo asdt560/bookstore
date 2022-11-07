@@ -5,19 +5,17 @@ import {
 } from 'react-router-dom';
 import Header from './components/Header';
 import BookContainer from './components/BookContainer';
-import Categories from './components/Categories';
+import Categories from './components/CategoriesDisplay';
 
 function App() {
   return (
-    <body>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<BookContainer />} />
-          <Route path="/categories" element={<Categories />} />
-        </Routes>
-      </Router>
-    </body>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<BookContainer />} />
+        <Route path="/categories" element={<Categories />} />
+      </Routes>
+    </Router>
   );
 }
 
