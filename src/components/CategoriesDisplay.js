@@ -1,20 +1,23 @@
 import React from 'react';
-import store from '../redux/configureStore';
+import { useSelector, useDispatch } from 'react-redux';
 import { checkState } from '../redux/categories/categories';
 
-export default function categories() {
-  const message = store.getState();
+function Categories() {
+  const message = useSelector((state) => state.status);
+  const dispatch = useDispatch();
   return (
     <section>
       <div>
-        {message.status[0]}
+        {message[0]}
       </div>
       <button
         type="button"
-        onClick={() => store.dispatch(checkState())}
+        onClick={() => { dispatch(checkState()); }}
       >
         Check status
       </button>
     </section>
   );
 }
+
+export default Categories;

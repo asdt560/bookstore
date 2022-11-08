@@ -1,6 +1,6 @@
-# Math-magicians
+# bookstore
 
-> Single Page Application which performs simple calculations and displays math-related quotes.
+> Single Page Application which keeps a list of books.
 
 ## Built with
 
@@ -8,7 +8,8 @@
 
 ## Live Demo
 
-[Github Pages](https://asdt560.github.io/math-magicians)
+Pending
+
 ## Getting started
 
 Clone the repository, then run npm install to get the necessary packages.

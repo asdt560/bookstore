@@ -1,12 +1,13 @@
 import React from 'react';
-import store from '../redux/configureStore';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 
 export default function Booklist() {
-  const object = store.getState();
+  const bookList = useSelector((state) => state.bookList);
+  console.log(bookList);
   return (
     <ul>
-      {object.bookList.map((book) => (
+      {bookList.map((book) => (
         <Book
           key={book.id}
           book={book}
