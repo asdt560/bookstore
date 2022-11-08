@@ -4,7 +4,6 @@ import Book from './Book';
 
 export default function Booklist() {
   const bookList = useSelector((state) => state.bookList);
-  console.log(bookList);
   return (
     <ul>
       {bookList.map((book) => (
