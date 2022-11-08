@@ -1,7 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteBook } from '../redux/books/books';
 
 export default function Book(props) {
   const propsHolder = props;
+  const dispatch = useDispatch();
   return (
     <li className="bookelement" id={propsHolder.book.id}>
       <div className="leftdiv">
@@ -12,7 +15,12 @@ export default function Book(props) {
         </div>
         <div>
           <button type="button">comments</button>
-          <button type="button">remove</button>
+          <button
+            type="button"
+            onClick={() => { dispatch(deleteBook(propsHolder.book.id)); }}
+          >
+            remove
+          </button>
           <button type="button">edit</button>
         </div>
       </div>

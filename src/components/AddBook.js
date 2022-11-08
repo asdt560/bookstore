@@ -1,9 +1,10 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import store from '../redux/configureStore';
+import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
 
-export default function AddBook() {
+function AddBook() {
+  const dispatch = useDispatch();
   return (
     <form
       className="addform"
@@ -13,7 +14,7 @@ export default function AddBook() {
         const author = e.target[1].value;
         e.target[0].value = '';
         e.target[1].value = '';
-        store.dispatch(addBook(title, author, uuidv4()));
+        dispatch(addBook(title, author, uuidv4()));
       }}
     >
       <input type="text" name="title" placeholder="Book Title" required />
@@ -22,3 +23,5 @@ export default function AddBook() {
     </form>
   );
 }
+
+export default AddBook;

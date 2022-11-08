@@ -1,7 +1,26 @@
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
-export const initialState = [];
+export const initialState = [
+  {
+    id: 1,
+    title: 'book',
+    author: 'author',
+    completed: false,
+  },
+  {
+    id: 12,
+    title: 'book2',
+    author: 'author2',
+    completed: false,
+  },
+  {
+    id: 123,
+    title: 'book23',
+    author: 'author23',
+    completed: false,
+  },
+];
 
 export default function bookList(state = initialState, action) {
   switch (action.type) {
@@ -34,7 +53,7 @@ export function addBook(title, author, id) {
 
 export function deleteBook(id) {
   return {
-    type: ADD_BOOK,
+    type: REMOVE_BOOK,
     id,
   };
 }
