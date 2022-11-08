@@ -3,7 +3,7 @@ import React from 'react';
 export default function Book(props) {
   const propsHolder = props;
   return (
-    <li className="bookelement">
+    <li className="bookelement" id={propsHolder.book.id}>
       <div className="leftdiv">
         <div>
           <p>{propsHolder.book.category}</p>
