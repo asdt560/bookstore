@@ -1,59 +1,38 @@
-const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
-
-export const initialState = [
-  {
-    id: 1,
-    title: 'book',
-    author: 'author',
-    completed: false,
+import { /* createAsyncThunk */ createSlice } from '@reduxjs/toolkit';
+/*
+const getBooks = createAsyncThunk('books/getBooks', async () => fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/B0GjVOSnEbK9WCUJ1ENb/books', {
+  method: 'GET',
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
   },
-  {
-    id: 12,
-    title: 'book2',
-    author: 'author2',
-    completed: false,
+})
+  .then((response) => response.json()));
+*/
+const booksSlice = createSlice(({
+  name: 'books',
+  initialState: {
+    books: [
+      {
+        item_id: 'item1',
+        title: 'The Great Gatsby',
+        author: 'John Smith',
+        category: 'Fiction',
+      },
+    ],
+    loading: false,
   },
-  {
-    id: 123,
-    title: 'book23',
-    author: 'author23',
-    completed: false,
+  reducers: {
+    addBook(state, action) {
+      state.books.push(action.payload);
+    },
+    deleteBook(state, action) {
+      console.log(action.payload);
+      const target = state.books.findIndex((item) => item.item_id === action.payload);
+      state.books.splice(target, 1);
+    },
   },
-];
+}));
 
-export default function bookList(state = initialState, action) {
-  switch (action.type) {
-    case ADD_BOOK:
-      return [
-        ...state,
-        {
-          id: action.id,
-          title: action.title,
-          author: action.author,
-          completed: false,
-        },
-      ];
-    case REMOVE_BOOK:
-      return state.filter((item) => item.id !== action.id);
-    default:
-      return state;
-  }
-}
+export const { addBook, deleteBook } = booksSlice.actions;
 
-export function addBook(title, author, id) {
-  return {
-    type: ADD_BOOK,
-    id,
-    title,
-    author,
-    completed: false,
-  };
-}
-
-export function deleteBook(id) {
-  return {
-    type: REMOVE_BOOK,
-    id,
-  };
-}
+export default booksSlice.reducer;

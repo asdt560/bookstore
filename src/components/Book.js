@@ -6,7 +6,7 @@ export default function Book(props) {
   const propsHolder = props;
   const dispatch = useDispatch();
   return (
-    <li className="bookelement" id={propsHolder.book.id}>
+    <li className="bookelement" id={propsHolder.book.item_id}>
       <div className="leftdiv">
         <div>
           <p>{propsHolder.book.category}</p>
@@ -17,7 +17,10 @@ export default function Book(props) {
           <button type="button">comments</button>
           <button
             type="button"
-            onClick={() => { dispatch(deleteBook(propsHolder.book.id)); }}
+            onClick={() => {
+              console.log(propsHolder.book);
+              dispatch(deleteBook(propsHolder.book.item_id));
+            }}
           >
             remove
           </button>
