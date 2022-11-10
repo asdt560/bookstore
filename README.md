@@ -5,6 +5,7 @@
 ## Built with
 
 - React (Create-React-App)
+- Redux Toolkit
 
 ## Live Demo
 
