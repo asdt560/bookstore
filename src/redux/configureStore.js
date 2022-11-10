@@ -1,12 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
-import bookList from './books/books';
+import { configureStore, applyMiddleware } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+import reducer from './books/books';
 import status from './categories/categories';
 
 const store = configureStore({
   reducer: {
-    bookList,
+    reducer,
     status,
   },
-});
+}, applyMiddleware(thunk));
 
 export default store;
