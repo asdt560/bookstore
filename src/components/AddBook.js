@@ -30,7 +30,7 @@ function AddBook() {
       <input type="text" name="title" placeholder="Book Title" required />
       <input type="text" name="author" placeholder="Author" required />
       <input type="text" name="category" placeholder="Category" required />
-      <button type="submit">ADD BOOK</button>
+      <button className="addbutton" type="submit">ADD BOOK</button>
     </form>
   );
 }

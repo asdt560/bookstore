@@ -9,31 +9,38 @@ export default function Book(props) {
     <li className="bookelement" id={propsHolder.book[0]}>
       <div className="leftdiv">
         <div>
-          <p>{propsHolder.book[1][0].category}</p>
-          <p>{propsHolder.book[1][0].title}</p>
-          <p>{propsHolder.book[1][0].author}</p>
+          <p className="category">{propsHolder.book[1][0].category}</p>
+          <p className="title">{propsHolder.book[1][0].title}</p>
+          <p className="author">{propsHolder.book[1][0].author}</p>
         </div>
-        <div>
-          <button type="button">comments</button>
+        <div className="buttondiv">
+          <button type="button">Comments</button>
           <button
             type="button"
             onClick={() => {
               dispatch(deleteBooks(propsHolder.book[0]));
             }}
           >
-            remove
+            Remove
           </button>
-          <button type="button">edit</button>
+          <button type="button">Edit</button>
         </div>
       </div>
       <div className="rightdiv">
-        <div>
-          completed:
+        <div className="completebar">
+          <div className="circle" />
+          <div className="completediv">
+            <p className="completenumber">0%</p>
+            <p className="completetext">Completed</p>
+          </div>
         </div>
-        <div>
-          <p>CURRENT CHAPTER</p>
-          <p>placeholder</p>
-          <button type="button">UPDATE PROGRESS</button>
+        <span className="divider" />
+        <div className="chapterdiv">
+          <div className="chaptername">
+            <p className="current">CURRENT CHAPTER</p>
+            <p className="nameofcurrent">Chapter 1</p>
+          </div>
+          <button className="bookbutton" type="button">UPDATE PROGRESS</button>
         </div>
       </div>
     </li>
