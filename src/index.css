@@ -167,7 +167,7 @@ main {
   margin: 0.5rem;
   align-self: center;
 
-  --b: 5px;  /* border width */
+  --b: 5px;
 
   color: #313149;
   display: inline-block;
@@ -185,9 +185,10 @@ main {
   background: var(--c, linear-gradient(to bottom, #307bbe, #379cf6));
   padding: var(--b);
   border-radius: 50%;
+  /* stylelint-disable-next-line */
   mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
