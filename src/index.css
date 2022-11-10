@@ -168,6 +168,7 @@ main {
   align-self: center;
 
   --b: 5px;  /* border width */
+  
   color: #313149;
   display: inline-block;
   width: 4.25rem;
