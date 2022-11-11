@@ -121,6 +121,7 @@ main {
   font-weight: bold;
   font-size: 0.875rem;
   color: #828282;
+  margin-bottom: 0.25rem;
 }
 
 .title {
@@ -131,21 +132,36 @@ main {
 
 .author {
   font-family: RobotoSlab, sans-serif;
+  font-weight: lighter;
   font-size: 0.875rem;
-  color: #4386bf;
+  color: #6da1cd;
+}
+
+.leftdiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.infodiv {
+  margin-bottom: 0.5rem;
 }
 
 .leftdiv button {
   border: 0;
   background: none;
   padding: 0.5rem;
-  color: #4386bf;
+  color: #6da1cd;
   font-family: RobotoSlab, sans-serif;
+  font-weight: 300;
   font-size: 0.875rem;
 }
 
 .leftdiv button:hover {
   cursor: pointer;
+}
+
+.leftdiv button:first-child {
+  padding-left: 0;
 }
 
 .leftdiv button:not(:last-child) {

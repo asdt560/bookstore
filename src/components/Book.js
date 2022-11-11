@@ -8,7 +8,7 @@ export default function Book(props) {
   return (
     <li className="bookelement" id={propsHolder.book[0]}>
       <div className="leftdiv">
-        <div>
+        <div className="infodiv">
           <p className="category">{propsHolder.book[1][0].category}</p>
           <p className="title">{propsHolder.book[1][0].title}</p>
           <p className="author">{propsHolder.book[1][0].author}</p>
