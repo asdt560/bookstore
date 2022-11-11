@@ -8,10 +8,10 @@ export default function Booklist() {
   const bookList = useSelector((state) => state.reducer.books);
   useEffect(() => {
     dispatch(getBooks());
-  }, []);
+  }, [dispatch]);
   const contents = Object.entries(bookList);
   return (
-    <ul>
+    <ul className="booklist">
       {contents.map((content) => (
         <Book
           key={content[0]}

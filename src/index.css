@@ -5,24 +5,36 @@
   font-size: 16px;
 }
 
-body {
+#root {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background-color: #fafafa;
+  border-bottom: solid 1px #e8e8e8;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 1rem;
+  width: 100vw;
+  padding: 1.5rem 6rem;
+  background-color: #fff;
+  font-family: Montserrat, sans-serif;
+}
+
+.headerdiv {
+  display: flex;
+  justify-content: space-between;
+  width: 45vw;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0290ff;
 }
 
 li {
@@ -33,35 +45,233 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 20vw;
+  width: 19vw;
+}
+
+.headerlink {
+  color: black;
+  text-decoration: none;
+  letter-spacing: 1.9px;
+}
+
+.headerlink:hover {
+  opacity: 0.5;
 }
 
 .headerbutton {
+  background-color: #fff;
   border-radius: 100%;
-  height: 60px;
-  width: 60px;
+  height: 3rem;
+  width: 3rem;
   text-align: center;
+  border: solid 1px #e8e8e8;
 }
 
 main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.booklist {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
   width: 90vw;
-  align-items: center;
 }
 
 .bookelement {
   display: flex;
-  width: 100%;
+  width: 97%;
   justify-content: space-around;
+  padding: 2rem 5rem 2rem 2rem;
+  background-color: #fff;
+  margin: 1rem;
+  border: solid 1px #e8e8e8;
 }
 
 .addform {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  padding: 1rem;
+  width: 90vw;
+  padding: 1rem 0;
+  align-self: center;
 }
 
 .addform * {
   padding: 0.5rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  width: 250px;
+}
+
+.addbutton {
+  width: 8.938rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 0.813rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.category {
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #828282;
+  margin-bottom: 0.25rem;
+}
+
+.title {
+  font-family: RobotoSlab, sans-serif;
+  font-weight: bold;
+  font-size: 1.375rem;
+}
+
+.author {
+  font-family: RobotoSlab, sans-serif;
+  font-weight: lighter;
+  font-size: 0.875rem;
+  color: #6da1cd;
+}
+
+.leftdiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.infodiv {
+  margin-bottom: 0.5rem;
+}
+
+.leftdiv button {
+  border: 0;
+  background: none;
+  padding: 0.5rem;
+  color: #6da1cd;
+  font-family: RobotoSlab, sans-serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+}
+
+.leftdiv button:hover {
+  cursor: pointer;
+}
+
+.leftdiv button:first-child {
+  padding-left: 0;
+}
+
+.leftdiv button:not(:last-child) {
+  border-right: solid 1px #e8e8e8;
+}
+
+.rightdiv {
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.completebar {
+  display: flex;
+}
+
+.circle {
+  margin: 0.5rem;
+  align-self: center;
+
+  --b: 5px;
+
+  color: #313149;
+  display: inline-block;
+  width: 4.25rem;
+  height: 4.25rem;
+  position: relative;
+  z-index: 0;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--c, linear-gradient(to bottom, #307bbe, #379cf6));
+  padding: var(--b);
+  border-radius: 50%;
+  /* stylelint-disable-next-line */
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.completenumber {
+  font-family: Montserrat, sans-serif;
+  font-size: 2rem;
+}
+
+.completetext {
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+}
+
+.completediv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.divider {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 1.125rem 3.688rem 0 4.938rem;
+  border: solid 1px #e8e8e8;
+}
+
+.chapterdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 6rem;
+}
+
+.chaptername {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 3rem;
+}
+
+.current {
+  letter-spacing: 0.9px;
+  opacity: 0.5;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+}
+
+.nameofcurrent {
+  font-family: RobotoSlab, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  color: #121212;
+}
+
+.bookbutton {
+  width: 11rem;
+  height: 2rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 0.5px;
 }
